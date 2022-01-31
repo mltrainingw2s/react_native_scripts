@@ -5,6 +5,7 @@ import 'react-native-gesture-handler';
 
 import * as React from 'react';
 import {View, TouchableOpacity, Image} from 'react-native';
+import Icon from 'react-native-ico-material-design';
 
 import {
   NavigationContainer,
@@ -41,11 +42,21 @@ const BottomTabStack = () => {
         screenOptions={{
           headerShown: false
         }}
-      />
+        options={{
+          tabBarShowLabel:false,
+          tabBarIcon:({tintColor})=>(  
+            <Icon name="home-button" color={'black'} size={35}/>  
+          )  
+          }}/>
       <Tab.Screen
         name="Gallary"
         component={Gallary}
-      />
+        options={{
+          tabBarShowLabel:false,
+          tabBarIcon:({tintColor})=>(  
+            <Icon name="photo-library" color={'black'} size={35}/>  
+          )  
+          }}/>
     </Tab.Navigator>
   );
 };

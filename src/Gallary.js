@@ -20,10 +20,10 @@ export default App = () => {
 
   return (
 
-    <View style={{ flex: 1, padding: 24, flexDirection: 'row', flexWrap:'wrap'}}>
+    <View style={{ flex: 1, padding: 24 }}>
       
       {isLoading ? <Text>Loading...</Text> : 
-      ( <View style={{ flex: 1, flexDirection: 'row',flexWrap:'wrap', justifyContent:  'space-between'}}>
+      ( <View style={{ flex: 1, flexDirection: 'column', justifyContent:  'space-between'}}>
           {/* <Text style={{ fontSize: 18, color: 'green', textAlign: 'center'}}>{'smile_percentage'}</Text> */}
           {/* <Text style={{ fontSize: 14, color: 'green', textAlign: 'center', paddingBottom: 10}}>smile_percentage:</Text> */}
           <FlatList
@@ -32,11 +32,14 @@ export default App = () => {
             // numColumns={3}
             // key={3}
             renderItem={({ item }) => (
+            //   <View>
+            // <Text>{item.id + '. ' + item.smile_percentage}</Text>
+            //   <Image style={{ height: 100, width: 100}} source = {{uri:'http://13.234.21.152:8000/static/detectimg/'+item.image_upload}}></Image>
+            //   </View>
             
-            <View style={{flex:1,flexDirection:'row',flexWrap:'wrap'}}>
-             
-            <GridImageView  
-             data={['http://13.234.21.152:8000/static/detectimg/'+item.image_upload,]} />
+            <View>
+              {/* <Text>{item.image_upload}</Text> */}
+            <GridImageView   data={['http://13.234.21.152:8000/static/detectimg/'+item.image_upload]} />
             </View> 
 
 
@@ -47,39 +50,4 @@ export default App = () => {
       )}
     </View>
   );
-};
-
-
-
-// import React from 'react'
-// import { View, Image, Dimensions,ScrollView, TouchableOpacity} from "react-native"
-// import { managePanProps } from 'react-native-gesture-handler/lib/typescript/handlers/PanGestureHandler';
-// import Images from './Images';
-// // import Showimages from './Showimages';
-
-// let deviceHeight = Dimensions.get('window').height;
-// let deviceWidth = Dimensions.get('window').width;
-
-// const Gallary = (props) => {
-//   return (
-//     <ScrollView>
-//     <View style={{display:'flex',flexDirection:'row',flexWrap:'wrap'}}>
-//       {
-//         Images.map((image,index) => (
-//           <TouchableOpacity key ={index} onPress={()=> 
-//           props.navigation.navigate('Showimages',{
-//             url:image.url
-//           })}>
-//             <Image source ={image.url}
-//             style={{height:deviceHeight/3,
-//             width:deviceWidth/3-6,
-//             borderRadius:10,
-//             margin:2}}/>
-//           </TouchableOpacity>
-//        ))
-//       }
-//     </View>
-//     </ScrollView>
-//   )
-// }
-// export default Gallary;
+            };

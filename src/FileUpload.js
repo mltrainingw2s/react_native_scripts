@@ -30,7 +30,8 @@ const App = () => {
         // DocumentPicker.types.pdf
       });
       //Printing the log realted to the file
-      console.log('res : ' + JSON.stringify(res).replace(/\[|\]|"/g, ""));
+      // console.log('res : ' + JSON.stringify(res).replace(/\[|\]|"/g, ""));
+      console.log('res : ' + JSON.stringify(res))
       console.log('URI : ' + res.uri);
       console.log('Type : ' + res.type);
       console.log('File Name : ' + res.name);

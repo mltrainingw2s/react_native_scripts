@@ -30,7 +30,7 @@ const dummyData = [
     name: "orange card",
     color: "#D7DBDD",
     redirect: "Detection",
-    image: "http://13.234.21.152:8000/static/img/11.png",
+    image: "http://13.234.21.152:8000/static/img/face.jpg",
     title : 'Smile Detetcion',
   },
   {
@@ -38,8 +38,16 @@ const dummyData = [
     name: "red card",
     color: "#D7DBDD",
     redirect: "FileUpload",
-    image: "http://13.234.21.152:8000/static/img/11.png",
+    image: "http://13.234.21.152:8000/static/img/text.png",
     title : 'Text Summarization',
+  },
+  {
+    id: 3,
+    name: "red card",
+    color: "#D7DBDD",
+    redirect: "Home",
+    image: "http://13.234.21.152:8000/static/img/videodetect.jpg",
+    title : 'Video Detection',
   },
   
 ];
